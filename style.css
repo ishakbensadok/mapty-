@@ -241,6 +241,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 5px;
 }
 @media screen and (min-width: 500px) {
@@ -518,7 +519,6 @@ button {
 
 .btn {
   display: inline-block;
-  /* padding: 0.2rem; */
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -533,7 +533,7 @@ button {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 2rem;
-  padding: 3rem;
+  padding: 1rem;
   padding-bottom: 2rem;
   background-color: rgb(132, 181, 126);
   transition: all 0.5s;
@@ -547,6 +547,11 @@ button {
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
   color: #3c3838;
+}
+@media screen and (min-width: 768px) {
+  .alert {
+    padding: 3rem;
+  }
 }
 
 .alert.alert--error {
@@ -612,4 +617,14 @@ button {
 }
 .Copyright a:hover {
   color: #fff;
+}
+
+/* **Updates** */
+
+.workout__info span {
+  margin-left: 5px;
+}
+.workout__info {
+  display: flex;
+  align-items: center;
 }
