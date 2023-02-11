@@ -62,7 +62,7 @@ class App {
     navigator.geolocation.getCurrentPosition(
       this._getPosition.bind(this),
       function () {
-        alert('cloud not display the map');
+        alert('cloud not display the map, make sure to turn your location on');
       }
     );
   }
