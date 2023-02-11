@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""
+    ></script>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>mapty</title>
+  </head>
+  <body>
+    <!-- ****************** -->
+    <div class="alert hidden">
+      <p class="alert__message">
+        Are you sure you whant to delete this workout ?
+      </p>
+      <div class="alert__answer">
+        <span class="alert__answer--agree">✔</span>
+        <span class="alert__answer--discard">×</span>
+      </div>
+    </div>
+    <div class="alert alert--error hidden">
+      <span class="alert__close"></span>
+      <p class="alert__message">
+        ⚠️ invalid, Symbols and Negative Numbers are NOT allowed
+      </p>
+    </div>
+    <!-- ****************** -->
+    <aside class="aside">
+      <img src="logo.png" alt="" class="logo" />
+
+      <form class="form form--hidden">
+        <!-- <form class="form"> -->
+        <span class="form__close"></span>
+        <div class="form__row">
+          <label class="form__label" for="">Type</label>
+          <select class="form__input form__input--type" name="" id="">
+            <option value="running">Running</option>
+            <option value="cycling">Cycling</option>
+          </select>
+        </div>
+        <!-- ////////////// -->
+        <div class="form__row">
+          <label class="form__label" for="">Distance</label>
+          <input
+            class="form__input form__input--distance"
+            type="text"
+            placeholder="km"
+            autofocus
+          />
+        </div>
+        <!-- ////////////// -->
+        <div class="form__row">
+          <label class="form__label" for="">Duration</label>
+          <input
+            class="form__input form__input--duration"
+            type="text"
+            placeholder="min"
+          />
+        </div>
+        <!-- ////////////// -->
+        <div class="form__row">
+          <label class="form__label" for="">Cadence</label>
+          <input
+            class="form__input form__input--cadence"
+            type="text"
+            placeholder="step/min"
+          />
+        </div>
+        <!-- ////////////// -->
+        <div class="form__row form_row--hidden">
+          <label class="form__label" for="">Elev Gain</label>
+          <input
+            class="form__input form__input--elevGain"
+            type="text"
+            placeholder="meters"
+          />
+        </div>
+        <button></button>
+      </form>
+
+      <ul class="list workouts"></ul>
+      <div class="workouts__feature">
+        <span class="workouts__close">Delete All</span>
+
+        <span class="workouts__sort">
+          <span class="btn">sort by</span>
+
+          <select class="select select--type feature--hidden">
+            <option class="option" value="distance">distance</option>
+            <option value="duration">duration</option>
+          </select>
+          <select class="select select--direction feature--hidden">
+            <option value="ascending">ascending</option>
+            <option value="descending">descending</option>
+          </select>
+
+          <span class="filter">Filter</span>
+        </span>
+      </div>
+      <p class="Copyright">
+        © Copyright by
+        <a href="https://twitter.com/bensadokishak">ishak bensadok</a>
+      </p>
+    </aside>
+    <main class="main" id="map"></main>
+
+    <!-- ******************************** -->
+
+    <div class="overlay hidden"></div>
+  </body>
+</html>
